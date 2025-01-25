@@ -3,7 +3,6 @@ flows = []
 for x in range(streamAmount): 
     flows.append(int(input()))
 
-# flag=True
 while True: 
     ask = int(input())
     if ask == 99: 
