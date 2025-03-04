@@ -8,46 +8,47 @@ def tileLabels(n):
     board.append('  ')
     return board
 
-
-
 def getNewPuzzle(n):
     board = tileLabels(n)
     new_lst = []
     random.shuffle(board)
     for i in range(0, len(board), n):
         new_lst.append(board[i:i+n])
-    return new_lst
+    return findEmptyTile(132)
 
 
-def findEmptyTile(n):
-    board = getNewPuzzle(n)
-    for i in range(len(board)):
-        for j in range(len(board[i])):
-            if board[i][j] == '  ':
-                return (i, j), board
+
+def findEmptyTile():
+    for i in range(len(board_lst)):
+        for j in range(len(board_lst[i])):
+            if board_lst[i][j] == '  ':
+                return (i, j)
             
-
-def nextMove(n):
-    position, board = findEmptyTile(n)
+def nextMove():
+    position = findEmptyTile()
     possible = []
-    print(board)
-    print(position)
+    if position[1]+1<len(board_lst):
+        possible.append("A")
     if position[0]-1>=0:
         possible.append("S")
-    if position[0]+1<n:
+    if position[0]+1<len(board_lst):
         possible.append("W")
     if position[1]-1>=0:
         possible.append("D")
-    if position[1]+1<n:
-        possible.append("A")
-    print(possible)
-    user = input("Enter WASD (or QUIT): ")
-    while user not in possible and user !="quit":
-        user = input(" try again: ")
+
+    first_line = f'\t\t\t {"(W)" if "W" in possible else "(  )"}'
+    second_line = 'Enter WASD (or QUIT):' + " ".join(f'({m})' if m in possible else '(  )' for m in ["A", "S", "D"])
+    user = input(f"{first_line}\n{second_line}\n>")
+    
+    while user not in possible and user.lower() !="quit":
+        user = input(f"{first_line}\n{second_line}\n>")
 
     if user == "quit":
         sys.exit()
     return user
+
+board_lst = getNewPuzzle(3)
+print(nextMove())
 
 # def displayBoard(board_lst):
 #     n = len(board_lst)
@@ -71,5 +72,5 @@ def nextMove(n):
 #     print(draw_board.format(*labels))
 
 
-            
-print(nextMove(3))
+        
+
