@@ -1,6 +1,7 @@
 #Pranjwal Singh - 2436027
 import random
 import sys
+
 def tileLabels(n):
     board = []
     for i in range(1, n**2):
@@ -14,19 +15,23 @@ def getNewPuzzle(n):
     random.shuffle(board)
     for i in range(0, len(board), n):
         new_lst.append(board[i:i+n])
-    return findEmptyTile(132)
+    return new_lst
 
 
 
-def findEmptyTile():
+def findEmptyTile(n):
+    board_lst = getNewPuzzle(n)
     for i in range(len(board_lst)):
         for j in range(len(board_lst[i])):
             if board_lst[i][j] == '  ':
-                return (i, j)
-            
-def nextMove():
-    position = findEmptyTile()
+                print(board_lst)
+                return (i, j), board_lst
+           
+           
+def nextMove(n):
+    position, board_lst = findEmptyTile(n)
     possible = []
+    print(board_lst)
     if position[1]+1<len(board_lst):
         possible.append("A")
     if position[0]-1>=0:
@@ -47,8 +52,14 @@ def nextMove():
         sys.exit()
     return user
 
-board_lst = getNewPuzzle(3)
-print(nextMove())
+# print(nextMove(3))
+
+
+
+
+
+
+
 
 # def displayBoard(board_lst):
 #     n = len(board_lst)
