@@ -93,12 +93,12 @@ def main():
     max_moves = {3: 31, 4: 80}
     num_moves =1
     
-    while [item for sublist in board for item in sublist] != solved and num_moves<=max_moves[len(board)] :
+    while [item for sublist in board for item in sublist] != solved and num_moves<=max_moves[len(board)] if len(board) in max_moves else True :
         position = findEmptyTile(board)
         user_move = nextMove(position, board)
         board = makeMove(board, user_move)
         num_moves+=1
 
-    return "Congratulations!! YOU WIN; Here's a candy 🍬!" if num_moves<=max_moves[len(board)] else "YOU LOST!! 🔫 "
+    return "Congratulations!! YOU WIN; Here's a candy 🍬!" if num_moves<=max_moves[len(board)] else "Best of luck next time!"
     
-# print(main())
+print(main())
