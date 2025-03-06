@@ -42,7 +42,7 @@ def nextMove(position, board_lst):
         print("Invalid move. Try again!")
         user = input(f"{first_line}\n{second_line}\n>")
 
-    if user == "quit":
+    if user.lower() == "quit":
         sys.exit()
     return user
         
