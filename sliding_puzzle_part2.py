@@ -80,7 +80,7 @@ def displayBoard(board_lst):
     print(draw_board.format(*labels))
 
 def main():
-    print("Hi!!! Welcome to the sliding puzzle, slide about the tiles with W, S, A, D \n \
+    print("Hi!!! Welcome to the sliding puzzle! Slide about the tiles with W, S, A, D \n \
           The player wins when all the numbered tiles are arranged in the correct order, with the empty space in the bottom-right corner!")
     dimension = int(input("Board Dimension?> "))
 
@@ -102,4 +102,4 @@ def main():
     displayBoard(board)
     return "Congratulations!! YOU WIN; Here's a candy 🍬!" if [item for sublist in board for item in sublist] == solved else "Best of luck next time!"
     
-print(main())
+# print(main())
