@@ -91,14 +91,15 @@ def main():
         solved.append(f'{i} ' if i < 10 else f'{i}')
     solved.append('  ')
     max_moves = {3: 31, 4: 80}
-    num_moves =1
+    max_moves[len(board)] = max_moves.get(len(board), len(board)**4) #honestly just needed to deal with in case they input something like 2 or 4
+    num_moves = 1
     
-    while [item for sublist in board for item in sublist] != solved and num_moves<=max_moves[len(board)] if len(board) in max_moves else True :
+    while [item for sublist in board for item in sublist] != solved and num_moves<=max_moves[len(board)]:
         position = findEmptyTile(board)
         user_move = nextMove(position, board)
         board = makeMove(board, user_move)
         num_moves+=1
-
-    return "Congratulations!! YOU WIN; Here's a candy 🍬!" if num_moves<=max_moves[len(board)] else "Best of luck next time!"
+    displayBoard(board)
+    return "Congratulations!! YOU WIN; Here's a candy 🍬!" if [item for sublist in board for item in sublist] == solved else "Best of luck next time!"
     
 print(main())
