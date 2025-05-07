@@ -2,21 +2,16 @@ from pet import Pet
 from omnivore import Omnivore
 from mammal import Mammal
 
-class Dog(Mammal, Omnivore, Pet):
+class Dog(Mammal, Omnivore, Pet): # method resolution order (if its not in mammal, then go to herbivore, etc.)
     def __init__(self, legs = 4, ears = 2):
-        super().__init__(legs) 
+        super().__init__(legs) # doesn't need self
         self.ears = ears
-
-    #                 {{ Animal [Kingdom: Animalia]
-    # Mammal.__repr__ {{ Mammal [Class: Mammal]
-    #                  { Bunny {Species: Bunny}
-    #                  { Pet {This animal is a pet}
 
     def __repr__(self):
         text = '\nSpecies: Dog'
         result = Mammal.__repr__(self) + text  # Add Mammal info
         result += '\n' + Pet.__repr__(self)  # Add Pet info
-        result += '\n' + Omnivore.__repr__(self)  # Add Herbivore info
+        result += '\n' + Omnivore.__repr__(self)  # Add Omnivore info
         return result
     
     def reproduce(self) -> None:
@@ -33,21 +28,3 @@ class Dog(Mammal, Omnivore, Pet):
     def eat(self) -> None:
         Omnivore.eat(self)
 
-    def pet(self):
-        pet = Pet.pet(self)
-        print(pet)
-
-if __name__ == '__main__':
-    b1 = Dog()
-    print()
-    print(repr(b1))
-    print()
-    b1.reproduce()
-    print()
-    b1.eat()
-    print()
-    b1.move()
-    print()
-    b1.sleep()
-    print()
-    b1.pet()

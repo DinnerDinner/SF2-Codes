@@ -1,5 +1,4 @@
 from abc import ABCMeta, abstractmethod 
-
 class Animal(object, metaclass = ABCMeta):
     def __init__(self, legs = 0, fins = 0, wings = 0):
         self.legs = legs
@@ -20,5 +19,3 @@ class Animal(object, metaclass = ABCMeta):
     def __repr__(self) -> str:
         return f'Kingdom: Animalia'
     
-# if __name__ == '__main__': # cant instantiate abstract class Animal without an implementation for abstract methods
-#     anim = Animal(6)
