@@ -1,0 +1,20 @@
+﻿Pranjwal Singh 
+
+
+Exam Prep #3 – Sorting/Searching: Time Complexity
+Below are the common algorithms we’ve discussed in class:
+1. Selection Sort  
+2. Insertion Sort  
+3. Merge Sort  
+4. Quick Sort  
+5. Binary Search  
+
+
+Rank the above algorithms in descending order of time complexity (worst-case)*.  
+Choose the correct option:
+
+
+a) Merge Sort > Quick Sort > Selection Sort > Insertion Sort > Binary Search  
+b) Selection Sort = Insertion Sort = Quick Sort > Merge Sort > Binary Search  
+c) Merge Sort = Quick Sort > Selection Sort = Insertion Sort > Binary Search  
+d) Selection Sort > Merge Sort > Quick Sort > Insertion Sort > Binary Search

@@ -1,0 +1,25 @@
+﻿Pranjwal Singh
+Exam Prep #3 – Solution
+
+
+Descending order of Time Complexity (Worst Case)
+
+
+Time Complexities (Worst Case):
+- Selection Sort: O(n²)
+- Insertion Sort: O(n²)
+- Merge Sort: O(n log n)
+- Quick Sort: O(n²) (in worst-case scenarios like sorted input without pivot optimization)
+- Binary Search: O(log n)
+
+
+
+
+a) Merge Sort > Quick Sort > Selection Sort > Insertion Sort > Binary Search  
+b) Selection Sort = Insertion Sort = Quick Sort > Merge Sort > Binary Search  
+c) Merge Sort = Quick Sort > Selection Sort = Insertion Sort > Binary Search  
+d) Selection Sort > Merge Sort > Quick Sort > Insertion Sort > Binary Search  
+
+
+Correct Order:
+b) Selection Sort = Insertion Sort = Quick Sort > Merge Sort > Binary Search
